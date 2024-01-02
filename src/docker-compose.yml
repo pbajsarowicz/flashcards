@@ -1,0 +1,15 @@
+services:
+
+  app:
+    image: flashcards-app
+    container_name: flashcards-app
+    env_file: .env
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+      target: development
+    ports:
+      - "8000:8080"
+    volumes:
+      - .:/app/
+    restart: always
