@@ -6,8 +6,8 @@ services:
     env_file: .env
     build:
       context: .
-      dockerfile: src/Dockerfile
-      target: development
+      dockerfile: Dockerfile
+      target: dev
     ports:
       - "8000:8080"
     volumes:
