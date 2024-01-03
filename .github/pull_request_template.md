@@ -1,4 +1,3 @@
-<!-- DOCTOC SKIP -->
 🃏 FC-
 
 **Changelog:**
