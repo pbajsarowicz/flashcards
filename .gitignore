@@ -159,5 +159,11 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
+# OS
+.DS_Store
+
+# Build artifacts
+flashcards-ios/
+
 # Local development files
 .dev/

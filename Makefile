@@ -3,6 +3,7 @@
 # TODO: automatically update .PHONY
 
 run:
+	xhost +localhost
 	docker compose run --service-ports --rm app
 
 build:

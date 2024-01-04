@@ -7,7 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-kivy = {extras = ["base"], version = "2.3.0rc3"}
+Cython = "0.29.33"
+kivy = "2.3.0rc3"
+kivy-ios = "*"
 pydantic = {extras = ["dotenv"], version = "*"}
 pydantic-settings = "*"
 
@@ -92,8 +94,16 @@ ignore = [
     "ANN101",   # Missing type annotation for self in method
     "ANN102",   # Missing type annotation for cls in classmethod
     "ANN401",   # Dynamically typed expressions (typing.Any) are disallowed
-    "D104",
+    "D100",  # Missing docstring in public module
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+    "D104",  # Missing docstring in public package
+    "D105",  # Missing docstring in magic method
+    "D106",  # Missing docstring in public nested class
+    "D107",  # Missing docstring in __init__
 ]
+
 target-version = "py312"
 line-length = 120
 

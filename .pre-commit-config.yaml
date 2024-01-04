@@ -23,7 +23,7 @@ repos:
           - "--maxlevel"
           - "4"
           - "--title"
-          - "**Table of Contents**"
+          - "# Table of Contents"
           - "--update-only"
           - "src"
   - repo: https://github.com/astral-sh/ruff-pre-commit.git

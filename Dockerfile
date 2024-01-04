@@ -15,7 +15,9 @@ ENV PYTHONUNBUFFERED=1 \
     POETRY_NO_INTERACTION=1 \
     # Paths - this is where requirements and virtual environment will live
     PYDEPS_PATH="/opt/pydeps" \
-    VENV_PATH="/opt/pydeps/.venv"
+    VENV_PATH="/opt/pydeps/.venv" \
+    # X11 forwarding
+    USE_X11=1
 
 # Prepend poetry and venv to path
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
@@ -26,7 +28,19 @@ ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 FROM base as builder
 RUN apt-get update && apt-get install --no-install-recommends -y \
         build-essential \
-        curl
+        curl \
+        x11-apps
+
+# Kivy Ubuntu dependencies (source: https://kivy.org/doc/stable/installation/installation-linux.html#id1)
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    python3-dev build-essential git make autoconf automake libtool \
+    pkg-config cmake ninja-build libasound2-dev libpulse-dev libaudio-dev \
+    libjack-dev libsndio-dev libsamplerate0-dev libx11-dev libxext-dev \
+    libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev \
+    libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+    libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev \
+    python3-kivy
+
 
 # Install poetry - respects $POETRY_VERSION and $POETRY_HOME
 RUN curl -sSL https://install.python-poetry.org | python3 -
@@ -50,7 +64,7 @@ RUN poetry install --only dev
 
 COPY . /app
 WORKDIR /app
-CMD ["python"]
+CMD ["python", "src/main.py"]
 
 
 # Prod image
@@ -62,4 +76,4 @@ COPY --from=builder $PYDEPS_PATH $PYDEPS_PATH
 
 COPY . /app
 WORKDIR /app
-CMD [ "python"]
+CMD [ "python", "src/main.py"]
