@@ -1,11 +1,17 @@
+import json
+
 from kivy.app import App
 from kivy.uix.label import Label
 
+from flashcards import Flashcards
 
-class MyApp(App):
+
+class FlashcardsApp(App):
     def build(self) -> Label:
-        return Label(text="Hello world")
+        flashcards = Flashcards()
+        data = flashcards.pull()
+        return Label(text=json.dumps(data))
 
 
 if __name__ == "__main__":
-    MyApp().run()
+    FlashcardsApp().run()
