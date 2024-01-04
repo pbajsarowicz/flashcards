@@ -164,6 +164,7 @@ cython_debug/
 
 # Build artifacts
 flashcards-ios/
+.buildozer/
 
 # Local development files
 .dev/

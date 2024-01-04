@@ -130,6 +130,22 @@ jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
 uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
+name = "buildozer"
+version = "1.5.0"
+description = "Generic Python packager for Android / iOS and Desktop"
+optional = false
+python-versions = "*"
+files = [
+    {file = "buildozer-1.5.0-py3-none-any.whl", hash = "sha256:987cc4363c4834893bbf1c32547b8afd953a16b92d788a654ca5f89ba197d9ea"},
+    {file = "buildozer-1.5.0.tar.gz", hash = "sha256:ec685a53f88789607a43e629f9e25992c9be8824518b00d77ce3092ff7deca75"},
+]
+
+[package.dependencies]
+pexpect = "*"
+sh = "*"
+virtualenv = "*"
+
+[[package]]
 name = "certifi"
 version = "2023.11.17"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -1773,4 +1789,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "7581030d02f5b381d392536e50638fe042c4a6a0bcb33e15766e4ced91b8753f"
+content-hash = "1e84ed03ccf30d036cbd371a09f22651320dd4582a35c6dbaffee080b17ada5f"

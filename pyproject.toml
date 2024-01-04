@@ -6,8 +6,10 @@ authors = ["Piotr Bajsarowicz <piotr.bajsarowicz@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+#python = "^3.12"
+python = "^3.11"
 Cython = "0.29.33"
+buildozer = "*"
 kivy = "2.3.0rc3"
 kivy-ios = "*"
 pydantic = {extras = ["dotenv"], version = "*"}

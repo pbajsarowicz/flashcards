@@ -10,6 +10,8 @@
     - [Install XQuartz](#install-xquartz)
       - [Step #1](#step-1)
       - [Step #2](#step-2)
+- [Build](#build)
+  - [Configure XCode](#configure-xcode)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -36,3 +38,9 @@ OR follow instructions from https://www.xquartz.org/
 
 #### Step #2
 Enable `Allow connections from network clients` in settings (XQuartz > Settings > Security).
+
+
+# Build
+## Configure XCode
+1. Install XCode from App Store (https://apps.apple.com/us/app/xcode/id497799835?mt=12).
+2. Run `xcode-select --install`
