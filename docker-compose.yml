@@ -8,8 +8,19 @@ services:
       context: .
       dockerfile: Dockerfile
       target: dev
+    environment:
+      - DISPLAY=${DISPLAY:-:0.0}
+      - USE_X11=1
+      - LIBGL_ALWAYS_INDIRECT=1  # https://github.com/XQuartz/XQuartz/issues/144#issuecomment-907511509
+
     ports:
-      - "8000:8080"
+      - "8000:8000"
+      - "80:80"
+      - "443:443"
+      - "50922:10022"
     volumes:
       - .:/app/
+      - .:/home/user/hostcwd
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${PWD}/mac_hdd_ng.img:/image
     restart: always
