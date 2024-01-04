@@ -1,3 +1,7 @@
+# Long-term goals
+# 1. Develop with Docker (X11 forwarding).
+# 2. Build with Docker (Docker-OSX).
+
 FROM python:3.12-slim as base
 ENV PYTHONUNBUFFERED 1 \
     POETRY_HOME="/opt/poetry"
@@ -29,7 +33,8 @@ FROM base as builder
 RUN apt-get update && apt-get install --no-install-recommends -y \
         build-essential \
         curl \
-        x11-apps
+        x11-apps \
+        libmtdev-dev
 
 # Kivy Ubuntu dependencies (source: https://kivy.org/doc/stable/installation/installation-linux.html#id1)
 RUN apt-get update && apt-get install --no-install-recommends -y \
