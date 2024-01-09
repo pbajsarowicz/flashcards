@@ -35,7 +35,7 @@ class GoogleSheets:
             self._sheet = service.spreadsheets()
         return self._sheet
 
-    def get_data(self, spreadsheet_id: str, sheet_range: str = "Sheet1!A1:B2") -> list:
+    def get_data(self, spreadsheet_id: str, sheet_range: str = "Sheet1!A1:B") -> list:
         result = self.sheet.values().get(spreadsheetId=spreadsheet_id, range=sheet_range).execute()
 
         return result.get("values", [])
