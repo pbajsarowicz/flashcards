@@ -1,5 +1,4 @@
 .PHONY: run build test test-verbose test-coverage pre-deps install update setup
-
 # TODO: automatically update .PHONY
 
 run:

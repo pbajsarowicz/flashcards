@@ -15,6 +15,9 @@
     - [Setup XCode](#setup-xcode)
     - [Other dependencies](#other-dependencies)
   - [Build](#build)
+    - [Step 1 - Build locally & open XCode](#step-1---build-locally--open-xcode)
+    - [Step 2 - Setup & Run](#step-2---setup--run)
+    - [Step 3 - Allow launching external developers' apps.](#step-3---allow-launching-external-developers-apps)
 - [Future considerations & goals](#future-considerations--goals)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -60,10 +63,22 @@ $ brew link libtool
 ```
 
 ## Build
+### Step 1 - Build locally & open XCode
 ```shell
 $ make build
 $ make open
 ```
+### Step 2 - Setup & Run
+1. Plug in your iPhone.
+2. Configure signing in `Signing & Capabilities`.
+3. Select your device as a target.
+4. Click Run (`>`).
+
+[Troubleshooting](https://nrodrig1.medium.com/put-kivy-application-on-iphone-b9b4fd4692e9).
+
+### Step 3 - Allow launching external developers' apps.
+1. Go to `General > VPN & Device Management`.
+2. Trust the app.
 
 
 # Future considerations & goals

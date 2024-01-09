@@ -1,0 +1,27 @@
+#:kivy 1.0.9
+
+<FlashcardsLayout>:
+    BoxLayout:
+        size_hint_y: None
+        height: "48dp"
+        spacing: "2dp"
+        padding: "2dp"
+
+        Button:
+            text: "Reveal"
+            id: reveal_flashcard
+            on_release: root.reveal_flashcard()
+        Button:
+            text: "Next"
+            id: next_flashcard
+            on_release: root.next_flashcard()
+
+    BoxLayout:
+        Label:
+            id: flashcard
+            text: ""
+            text_size: cm(5), cm(20)
+            font_size: "70sp"
+            halign: "justify"
+            valign: "middle"
+            markup: True
